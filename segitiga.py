@@ -49,6 +49,19 @@ class Segitiga:
                 string += "*"
             string += "\n"
         print(string)
+
+    def SegitigaSikuSikuTerbalikKanan(self):
+        string = ""
+
+        for i in range(self.tinggi):
+            start = i
+            end = i
+            for x in range(0, end):
+                string += " "
+            for y in range(start, self.tinggi):
+                string += "*"
+            string += "\n"
+        print(string)
     
     def SegitigaSamaKakiBentuk1(self):
         i = 1
@@ -88,6 +101,34 @@ class Segitiga:
             string += "\n"
         print(string)
 
+    def SegitigaSamaKakiTerbalikBentuk1(self):
+        string = ""
+
+        for i in range(self.tinggi):
+            start = i
+            end = i
+            for x in range(0, end):
+                string += " "
+            for y in range(start, self.tinggi):
+                string += "**"
+            string += "\n"
+        print(string)
+
+    def SegitigaSamaKakiTerbalikBentuk2(self):
+        string = ""
+
+        for i in range(self.tinggi):
+            start = i
+            end = i
+            for x in range(0, end):
+                string += " "
+            for y in range(start, self.tinggi):
+                string += "*"
+            for z in range(start+1, self.tinggi):
+                string += "*"
+            string += "\n"
+        print(string)
+
 def main():
     loop = True
     while (loop == True):
@@ -96,11 +137,18 @@ def main():
         print("1. Segitiga siku kiri")
         print("2. Segitiga siku kanan")
         print("3. Segitiga siku Kiri Terbalik")
-        print("4. Segitiga sama kaki bentuk 1")
-        print("5. Segitiga sama kaki bentuk 2")
+        print("4. Segitiga siku kanan Terbalik")
+        print("5. Segitiga sama kaki bentuk 1")
+        print("6. Segitiga sama kaki bentuk 2")
+        print("7. Segitiga sama kaki terbalik bentuk 1")
+        print("8. Segitiga sama kaki terbalik bentuk 1")
         print("99. exit")
         pilihan = int(input("pilihan: "))
-        tinggiSegitiga = int(input("Tinggi segitiga: "))
+        if (pilihan == 99):
+            loop = False
+            print("\nTerima Kasih telah menggunakan aplikasi ini")
+        else:
+            tinggiSegitiga = int(input("Tinggi segitiga: "))
         print()
         if (pilihan == 1):
             segitiga = Segitiga(tinggiSegitiga)
@@ -113,12 +161,20 @@ def main():
             segitiga.SegitigaSikuSikuTerbalikKiri()
         elif (pilihan == 4):
             segitiga = Segitiga(tinggiSegitiga)
-            segitiga.SegitigaSamaKakiBentuk1()
+            segitiga.SegitigaSikuSikuTerbalikKanan()
         elif (pilihan == 5):
             segitiga = Segitiga(tinggiSegitiga)
+            segitiga.SegitigaSamaKakiBentuk1()
+        elif (pilihan == 6):
+            segitiga = Segitiga(tinggiSegitiga)
             segitiga.SegitigaSamaKakiBentuk2()
-        elif (pilihan == 99):
-            loop = False
+        elif (pilihan == 7):
+            segitiga = Segitiga(tinggiSegitiga)
+            segitiga.SegitigaSamaKakiTerbalikBentuk1()
+        elif (pilihan == 8):
+            segitiga = Segitiga(tinggiSegitiga)
+            segitiga.SegitigaSamaKakiTerbalikBentuk2()
         input("Press enter to continue")
+        clear()
 
 main()
